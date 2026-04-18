@@ -4,24 +4,32 @@
 # Maintainer: Thandiwe Assis
 # Version: 1.0.0
 
-# 1. Ask for user input
+# Ask for user input
 # Using printf for a cleaner prompt without a newline
 printf "Enter the file path or name: "
 read -r target_path
 
-# 2. Check if the input is empty to avoid false positives
+# Check if the input is empty to avoid false positives
 if [[ -z "$target_path" ]]; then
     echo "Error: No input provided. Please enter a valid path."
     exit 1
 fi
 
-# 3. Validation Logic using an if/else block
+# Validation Logic using an if/else block:
+# -d: checks if it's a directory
+# -f: checks if it's a regular file
+# -e: checks if the path exists
+# ! : inverts the condition (logical NOT)
+
 if [[ -d "$target_path" ]]; then
     echo "Success: '$target_path' is a directory."
+
 elif [[ -f "$target_path" ]]; then
     echo "Success: '$target_path' is a regular file."
+
 elif [[ ! -e "$target_path" ]]; then
     echo "Notice: The path '$target_path' does not exist."
+    
 # Catch-all for unexpected scenarios (Example: special devices, sockets, or permission issues)
 else
     echo "Critical: An unexpected error occurred while accessing '$target_path'."
