@@ -2,7 +2,6 @@
 
 # file_validator.sh - Script to check if a path is a file or a directory
 # Maintainer: Thandiwe Assis
-# Version: 1.0.0
 
 # Ask for user input
 # Using printf for a cleaner prompt without a newline
