@@ -4,6 +4,7 @@
 # Maintainer: Thandiwe Assis
 
 # $0 stores the script name and uses the basename to display only the filename, not the full path.
+# Technical Note: I use the basename command to keep the usage message clean
 SCRIPT_NAME=$(basename "$0")
 
 echo "Running script: $SCRIPT_NAME"
