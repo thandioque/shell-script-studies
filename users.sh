@@ -3,8 +3,6 @@
 # users - Extracts usernames and full names from /etc/passwd
 # Maintainer: Thandiwe Assis
 
-# cut -d ':' --output-delimiter=' ' -f 1,5 /etc/passwd
-
 # Sanity Check: Ensure the script has read access to /etc/passwd
 if [[ ! -r "/etc/passwd" ]]; then
     echo "Error: Cannot read /etc/passwd. Check your permissions."
