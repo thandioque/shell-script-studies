@@ -27,3 +27,5 @@ I am a firm believer that there is always more than one way to solve a problem i
 * *"You could use this built-in feature to avoid a pipe..."*
 
 Please, feel free to open an issue or reach out. I am eager to hear different perspectives and alternative ways of thinking. Every suggestion is a learning opportunity for me.
+
+---
