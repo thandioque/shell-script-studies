@@ -5,15 +5,15 @@
 
 # $0 stores the script name and uses the basename to display only the filename, not the full path.
 # Technical Note: I use the basename command to keep the usage message clean
-SCRIPT_NAME=$(basename "$0")
+script_name=$(basename "$0")
 
-echo "Running script: $SCRIPT_NAME"
+echo "Running script: $script_name"
 echo "Total arguments received: $#"
 echo "Values provided: $*"
 
 # Validation: Ensure exactly two arguments are provided
 if [[ $# -ne 2 ]]; then
-    echo "Usage: ./$SCRIPT_NAME <number1> <number2>"
+    echo "Usage: ./$script_name <number1> <number2>"
     exit 1
 fi
 

@@ -6,10 +6,10 @@
 # Ask for user input
 # Using printf for a cleaner prompt without a newline
 printf "Enter the file path or name: "
-read -r TARGET_PATH
+read -r target_path
 
 # Check if the input is empty to avoid false positives
-if [[ -z "$TARGET_PATH" ]]; then
+if [[ -z "$target_path" ]]; then
     echo "Error: No input provided. Please enter a valid path."
     exit 1
 fi
@@ -20,17 +20,17 @@ fi
 # -e: checks if the path exists
 # ! : inverts the condition (logical NOT)
 
-if [[ -d "$TARGET_PATH" ]]; then
-    echo "Success: '$TARGET_PATH' is a directory."
+if [[ -d "$target_path" ]]; then
+    echo "Success: '$target_path' is a directory."
 
-elif [[ -f "$TARGET_PATH" ]]; then
-    echo "Success: '$TARGET_PATH' is a regular file."
+elif [[ -f "$target_path" ]]; then
+    echo "Success: '$target_path' is a regular file."
 
-elif [[ ! -e "$TARGET_PATH" ]]; then
-    echo "Notice: The path '$TARGET_PATH' does not exist."
+elif [[ ! -e "$target_path" ]]; then
+    echo "Notice: The path '$target_path' does not exist."
     
 # Catch-all for unexpected scenarios (Example: special devices, sockets, or permission issues)
 else
-    echo "Critical: An unexpected error occurred while accessing '$TARGET_PATH'."
+    echo "Critical: An unexpected error occurred while accessing '$target_path'."
     exit 1
 fi
