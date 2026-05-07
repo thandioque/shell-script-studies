@@ -16,8 +16,10 @@ while read -r record_domain; do
     printf "Verifying connection with: %s\n" "$record_domain"
     
     # Execute ping and check the result directly in the 'if'
-    # -c 2: two packets | -W 1: wait 1 second max
-    # >/dev/null 2>&1: Silences the command by sending both standard output and error to the bit bucket (/dev/null), keeping the UI clean.
+    # -c 2 -> two packets
+    # -W 1 -> wait 1 second max
+    # ">/dev/null 2>&1" -> Silences the command by sending both standard output and error to the bit bucket (/dev/null), keeping the UI clean. 
+    # The &1 notation is a reference to the stdout file descriptor.
     if ping -c 2 -W 1 "$record_domain" >/dev/null 2>&1; then
         printf "Result: %s is REACHABLE\n" "$record_domain"
     else
