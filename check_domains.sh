@@ -11,7 +11,7 @@ bairro13.com
 EOF
 
 # read -r: Prevents backslashes (\) from being interpreted as escape characters. 
-# E.g: 'domain\name.com' would be read as 'domainname.com', potentially breaking the logic.
+# Example: 'domain\name.com' would be read as 'domainname.com', potentially breaking the logic.
 while read -r record_domain; do
     printf "Verifying connection with: %s\n" "$record_domain"
     
